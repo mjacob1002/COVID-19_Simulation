@@ -1,0 +1,8 @@
+Instructions for Running This Code
+
+WARNING: When testing different vaccination strategies, CHANGE THE vaxType variable in the runloop.sh script to correctly save data. Not doing so can result in errors or the overwriting of data. 
+Make sure to specifically check the file paths of getData.py and prepData.py. When running PrepData, pass sys.arg argument of the vaccination strategy type aka the name of the folder.
+
+Step 1: Run runloop.sh file until you get desired number of Monte Carlo simulations
+Step 2: Run prepData file
+Step 3: 
