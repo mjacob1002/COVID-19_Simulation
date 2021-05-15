@@ -12,3 +12,11 @@ Depending on the vaccination strategy that is wanted to be run, change the varia
 export vaxType="AgeVax"
 ```
 Additionally, count represents the number used in the name when generating the "out" csv files stored in Outputs subdirectories. You can modify the number of files by changing the number in the while loop in the script. 
+
+After all of the files are done being generated, you can run the prepData.py file by doing the following
+
+```shell
+
+python3 prepData.py "AgeVax"
+```
+You may replace AgeVax with the particular vaccination strategy that was used to generate the data. prepData.py will then create 8 files each containing the aggregated data for each compartment on each day for all of the different runs. 
