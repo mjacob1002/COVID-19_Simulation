@@ -11,3 +11,4 @@ Depending on the vaccination strategy that is wanted to be run, change the varia
 ```shell
 export vaxType="AgeVax"
 ```
+Additionally, count represents the number used in the name when generating the "out" csv files stored in Outputs subdirectories. You can modify the number of files by changing the number in the while loop in the script. 
