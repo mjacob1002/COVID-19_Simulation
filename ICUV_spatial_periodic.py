@@ -251,13 +251,13 @@ class ICUSpatialPeriodic():
         # probability of getting vaccinated
         pv = 0
         # standard vaccination strategy
-        if pv == 0:
+        if self.vaxStrat == 0:
             pv = self.eta
         # age based vaccination strategy
-        elif pv == 1:
+        elif self.vaxStrat == 1:
             pv = self.PV(sus.age)
         # radius based vaccination strategy
-        elif pv == 2:
+        elif self.vaxStrat == 2:
             pv = self.PVR(sus.R)
         # spreading readius based strategy
         else:
