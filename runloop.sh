@@ -1,14 +1,14 @@
 #!/bin/bash
 
-export vaxType="StandardVax"
-outer=13
-while [ $outer -lt 100 ]
+export vaxType="SpreadingVax"
+outer=0
+while [ $outer -lt 25 ]
 do
 count=1
-while [ $count -le 10 ]
+while [ $count -le 40 ]
 do
 	echo $count $vaxType
-	python3 getData.py $(( 10*$outer + $count )) $vaxType &
+	python3 getData.py $(( 40*$outer + $count )) $vaxType &
 	((count++))
 done
 wait

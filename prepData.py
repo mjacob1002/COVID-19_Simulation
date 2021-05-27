@@ -12,7 +12,8 @@ import glob
 
 def getCSVFiles(simType):
     csvToDF = []
-    path = "/Users/mathewjacob/Desktop/RxCOVea/Vaccine_Portion/Outputs/" + simType + "/*.csv"
+    path = "Outputs/" + simType + "/*.csv"
+  # path = "/Users/mathewjacob/Desktop/RxCOVea/Vaccine_Portion/Outputs/" + simType + "/*.csv"
     for fname in glob.glob(path):
         df = pd.read_csv(fname)
         csvToDF.append(df)
@@ -33,6 +34,7 @@ def aggregateFiles(data: list, zscore=1.96):
     sample_size = 0
     # add the days column to all of the dataframes
     for i, df in enumerate(tempList):
+        print("Length of data: ", len(data))
         tempList[i]["Days"] = data[0]["Days"]
     # add all the susceptible runs to the S dataframe
     for i, df in enumerate(data):
