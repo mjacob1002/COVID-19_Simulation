@@ -104,6 +104,9 @@ class ICUSpatialPeriodic():
         startingAngles = np.random.random(self.N) * 2 * math.pi
         spreadingRadius = np.random.normal(self.rstart, self.rstartsigma, self.N)
         for i in range(self.N):
+            if ages[i] < 0:
+                ages[i] = 0
+
             # S copy
             p1 = Person(coordinateX[i], coordinateY[i], ages[i], spreadingRadius[i],
                         movementRadii[i],
