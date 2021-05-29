@@ -268,7 +268,6 @@ class ICUSpatialPeriodic():
         # spreading readius based strategy
         else:
             pv = self.PV_spread_r(sus.r)
-        print("Probabilty of Vaccination: ", pv)
         if w < p <= w + pv * (1-w):
             return 2
         else:
