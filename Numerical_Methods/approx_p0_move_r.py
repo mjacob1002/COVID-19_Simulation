@@ -12,7 +12,7 @@ from scipy.stats import truncnorm
 
 # change when testing a new distribution
 mu = 12
-sigma = 5
+sigma = 3
 
 
 # the S(x) function, given a particular p0 and input age

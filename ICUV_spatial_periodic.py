@@ -85,7 +85,7 @@ class ICUSpatialPeriodic():
         self.muAges = 45
         self.sigmaAges = 20
         self.muR = 12
-        self.sigmaR = 5
+        self.sigmaR = 3
         # map the parameters
         # eta, psi are defined are the conditional probabilites
         self.eta, self.rho, self.phi, self.chi, self.omega, self.psi, self.mu, self.gamma, self.kappa = eta, rho, phi, chi, omega, psi, mu, gamma, kappa
@@ -231,18 +231,19 @@ class ICUSpatialPeriodic():
     def PVR(self, R):
         a = math.exp(-(R-self.muR - self.sigmaR))
         # for the value of mu_R=12, sigma_R=5. Change the divisor for different mu and sigma based on the regression
-        p0 = self.eta / .1733
-        return p0 / 1 + a
+        p0 = self.eta / .194
+        return p0 / (1 + a)
     # for spreading radius strategies
     def PV_spread_r(self, r):
         a = math.exp(-(r-self.rstart - self.rstartsigma))
         # value for rstart=3 and sigma=.5. Change the divisor for different values of those variables using regression
         p0 = self.eta/.384
-        return p0 / 1 + a
+        return p0 / (1 + a)
 
     # leave S helper function
     # replace the eta
     def _leaveSHelp(self, w, sus: Person):
+        # w is the probability of getting infected
         if w == 0:
             return 0
         # generate a random number
@@ -267,7 +268,7 @@ class ICUSpatialPeriodic():
         # spreading readius based strategy
         else:
             pv = self.PV_spread_r(sus.r)
-        
+        print("Probabilty of Vaccination: ", pv)
         if w < p <= w + pv * (1-w):
             return 2
         else:
