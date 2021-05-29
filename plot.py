@@ -1,10 +1,10 @@
 import pandas as pd
 from matplotlib import pyplot as plt
 
-df = pd.read_csv("Aggregates/StandardVax/D.csv")
-df1 = pd.read_csv("Aggregates/SpreadingVax/D.csv")
-df2 = pd.read_csv("Aggregates/AgeVax/D.csv")
-df3 = pd.read_csv("Aggregates/MovementVax/D.csv")
+df = pd.read_csv("Aggregates/StandardVax/I.csv")
+df1 = pd.read_csv("Aggregates/SpreadingVax/I.csv")
+df2 = pd.read_csv("Aggregates/AgeVax/I.csv")
+df3 = pd.read_csv("Aggregates/MovementVax/I.csv")
 plt.plot(df["Days"], df["mean"], "k-")
 plt.fill_between(df["Days"], df["mean"]- df["MarginOfError"], df["mean"]+df["MarginOfError"])
 plt.plot(df1["Days"], df1["mean"], 'r')
