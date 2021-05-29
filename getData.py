@@ -22,7 +22,7 @@ def genSigma(p):
 def runSims(fileName, simType):
     S0 = 999
     E0 = 0
-    I0 = 10
+    I0 = 1
     R0 = 0
     V0 = 0
     rstart = 3
