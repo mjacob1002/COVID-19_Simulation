@@ -230,12 +230,14 @@ class ICUSpatialPeriodic():
     # P(S->V) based on R
     def PVR(self, R):
         a = math.exp(-(R-self.muR - self.sigmaR))
-        p0 = .1
+        # for the value of mu_R=12, sigma_R=5. Change the divisor for different mu and sigma based on the regression
+        p0 = self.eta / .1733
         return p0 / 1 + a
     # for spreading radius strategies
     def PV_spread_r(self, r):
         a = math.exp(-(r-self.rstart - self.rstartsigma))
-        p0 = .1
+        # value for rstart=3 and sigma=.5. Change the divisor for different values of those variables using regression
+        p0 = self.eta/.384
         return p0 / 1 + a
 
     # leave S helper function

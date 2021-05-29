@@ -3,11 +3,14 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 import pandas as pd
 from matplotlib import pyplot as plt
+import os, sys
 
 class ModelFitting:
 
-    def __init__(self):
-        self.df = pd.read_csv("Approx_p0_vs_S(x)avg.csv")
+    def __init__(self, fileName, outputName):
+        # path to the file regression wanted
+        self.df = pd.read_csv(fileName)
+        self.outputName = outputName
         #print(df)
         self.p0 = self.df['p0'].to_numpy().reshape(-1,1)
         self.avg = self.df['Average of S(x)'].to_numpy().reshape(-1,1)
@@ -24,15 +27,18 @@ class ModelFitting:
         errors = y_test - y_predict
         stacked = np.stack((y_test, y_predict, errors), axis=1)
         tempDF = pd.DataFrame(stacked, columns=["Y Actual", "Y Predict", "Error"])
-        tempDF.to_csv("errors_mu_45_sigma_20_point_6.csv")
+        tempDF.to_csv(self.outputName)
         print(tempDF)
     
     def plot(self):
         plt.scatter(self.df['p0'].to_numpy(), self.df["Average of S(x)"].to_numpy())
 
-def main():
-    testObj = ModelFitting()
+def main(fileName, outputName):
+    testObj = ModelFitting(fileName, outputName)
     testObj.fit()
 
 if __name__ == '__main__':
-    main()
+    if len(sys.argv) < 3:
+        print("Need more inputs")
+        exit()
+    main(sys.argv[1], sys.argv[2])
