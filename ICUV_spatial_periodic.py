@@ -82,8 +82,8 @@ class ICUSpatialPeriodic():
         # map the distribution values, sigma being std deviation and mu being mean
         self.rstart = rstart
         self.rstartsigma = rstartsigma
-        self.muAges = 45.81
-        self.sigmaAges = 15
+        self.muAges = 45
+        self.sigmaAges = 20
         self.muR = 12
         self.sigmaR = 5
         # map the parameters
