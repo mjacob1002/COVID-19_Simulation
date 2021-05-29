@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export vaxType="AgeVax"
+export vaxType="StandardVax"
 outer=0
 while [ $outer -lt 25 ]
 do
