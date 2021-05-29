@@ -7,7 +7,7 @@ do
 count=1
 while [ $count -le 40 ]
 do
-	echo $count $vaxType
+	echo $(( 40*$outer + $count )) $vaxType
 	python3 getData.py $(( 40*$outer + $count )) $vaxType &
 	((count++))
 done
