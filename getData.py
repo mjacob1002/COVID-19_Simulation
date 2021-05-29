@@ -27,7 +27,7 @@ def runSims(fileName, simType):
     V0 = 0
     rstart = 3
     rstartsigma = 0.5
-    days = 31
+    days = 61
     #eta = np.random.normal(.03, genSigma(.03))
     eta = .03
     #rho = np.random.normal(.3, genSigma(.3))
