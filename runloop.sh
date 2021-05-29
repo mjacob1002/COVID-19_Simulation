@@ -1,6 +1,7 @@
 #!/bin/bash
 
-export vaxType="SpreadingVax"
+for vaxType in "StandardVax" "AgeVax" "MovementVax" "SpreadingVax"
+do
 outer=0
 while [ $outer -lt 25 ]
 do
@@ -15,5 +16,7 @@ wait
 echo "outer Loop $outer done"
 ((outer++))
 wait
+done
+echo Done with $vaxType
 done
 echo All done
