@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for vaxType in "StandardVax" "AgeVax" "MovementVax" "SpreadingVax"
+for vaxType in "NoVax"
 do
 outer=0
 while [ $outer -lt 25 ]

@@ -10,7 +10,8 @@ typeVax = {
 "StandardVax" : 0,
 "AgeVax" : 1,
 "MovementVax":2,
-"SpreadingVax" : 3
+"SpreadingVax" : 3,
+"NoVax": 0
 }
 
 
@@ -29,7 +30,7 @@ def runSims(fileName, simType):
     rstartsigma = 0.5
     days = 61
     #eta = np.random.normal(.03, genSigma(.03))
-    eta = .03
+    eta = 0
     #rho = np.random.normal(.3, genSigma(.3))
     rho = .3
     #phi = np.random.normal(.3, genSigma(.3))

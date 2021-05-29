@@ -266,7 +266,7 @@ class ICUSpatialPeriodic():
         elif self.vaxStrat == 2:
             pv = self.PVR(sus.R)
         # spreading readius based strategy
-        else:
+        elif self.vaxStrat == 3:
             pv = self.PV_spread_r(sus.r)
         if w < p <= w + pv * (1-w):
             return 2
