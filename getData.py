@@ -28,9 +28,11 @@ def runSims(fileName, simType):
     V0 = 0
     rstart = 3
     rstartsigma = 0.5
-    days = 61
+    days = 180
     #eta = np.random.normal(.03, genSigma(.03))
-    eta = 0
+    eta = 0.03
+    if simType == "NoVax":
+	eta = 0
     #rho = np.random.normal(.3, genSigma(.3))
     rho = .3
     #phi = np.random.normal(.3, genSigma(.3))
