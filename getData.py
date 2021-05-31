@@ -32,7 +32,7 @@ def runSims(fileName, simType):
     #eta = np.random.normal(.03, genSigma(.03))
     eta = 0.03
     if simType == "NoVax":
-	eta = 0
+	    eta = 0
     #rho = np.random.normal(.3, genSigma(.3))
     rho = .3
     #phi = np.random.normal(.3, genSigma(.3))
