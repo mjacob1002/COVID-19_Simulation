@@ -1,7 +1,7 @@
 #!/bin/bash
 
 total_loops=0
-for vaxType in "NoVax" "StandardVax" "AgeVax" "MovementVax" "SpreadingVax"
+for vaxType in "SpreadingVax"
 do
 outer=0
 while [ $outer -lt 21 ]
@@ -12,13 +12,18 @@ do
 	if [ $total_loops == 1001 ]
 	then
 		echo All done
-		exit 0
+		break
 	fi
 	echo $(( 48*$outer + $count )) $vaxType
 	python3 getData.py $(( 48*$outer + $count )) $vaxType &
 	((count++))
 	((total_loops++))
 done
+if $total_loops == 1001
+then
+	total_loops=0
+	break
+fi
 wait
 echo "outer Loop $outer done"
 ((outer++))
