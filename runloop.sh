@@ -15,7 +15,7 @@ do
 		exit 0
 	fi
 	echo $(( 48*$outer + $count )) $vaxType
-	python3 getData.py $(( 40*$outer + $count )) $vaxType &
+	python3 getData.py $(( 48*$outer + $count )) $vaxType &
 	((count++))
 	((total_loops++))
 done
