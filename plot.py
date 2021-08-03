@@ -1,6 +1,8 @@
 import pandas as pd
 from matplotlib import pyplot as plt
 
+# file for just getting preliminary visualization of the data
+
 df = pd.read_csv("Aggregates/StandardVax/I.csv")
 df1 = pd.read_csv("Aggregates/SpreadingVax/I.csv")
 df2 = pd.read_csv("Aggregates/AgeVax/I.csv")
