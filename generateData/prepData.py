@@ -63,7 +63,12 @@ def testSlicing(df: pd.DataFrame):
 def saveAggs(aggs: list, simType, columns=["S", "E", "I", "L", "ICU", "R", "D", "V"]):
     # make sure correct number of names for dataframes
     assert len(aggs) == len(columns)
+<<<<<<< HEAD
     savePath = "Aggregates/" + simType
+=======
+    # change this path to where you want the aggregate files to be saved. 
+    savePath = "/Users/mathewjacob/Desktop/RxCOVea/Vaccine_Portion/Aggregates/" + simType
+>>>>>>> d845008ccf6c36819cd74b762c1002235f491c17
     for i, df in enumerate(aggs):
         fname = savePath + "/" + columns[i] + ".csv"
         df.to_csv(fname)

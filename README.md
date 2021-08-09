@@ -1,6 +1,10 @@
 # COVID-19_Simulation
 COVID-19 RxCovea project
 
+
+[![DOI](https://zenodo.org/badge/353800559.svg)](https://zenodo.org/badge/latestdoi/353800559)
+
+
 # Setting up
 
 Clone this repo into a separate directory. Delete all of the files in the Aggregate/* and Outputs/* subdirectories. 

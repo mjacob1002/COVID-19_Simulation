@@ -1,7 +1,7 @@
 #!/bin/bash
 
 total_loops=0
-for vaxType in "SpreadingVax"
+for vaxType in "NoVax", "StandardVax", "AgeVax", "MovementVax", "SpreadingVax"
 do
 outer=0
 while [ $outer -lt 21 ]
