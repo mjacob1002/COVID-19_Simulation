@@ -13,7 +13,7 @@ import glob
 def getCSVFiles(simType):
     csvToDF = []
     path = "Outputs/" + simType + "/*.csv"
-  # path = "/Users/mathewjacob/Desktop/RxCOVea/Vaccine_Portion/Outputs/" + simType + "/*.csv"
+   # path = "/Users/mathewjacob/Desktop/RxCOVea/Vaccine_Portion/Outputs/" + simType + "/*.csv"
     for fname in glob.glob(path):
         df = pd.read_csv(fname)
         csvToDF.append(df)
@@ -63,7 +63,7 @@ def testSlicing(df: pd.DataFrame):
 def saveAggs(aggs: list, simType, columns=["S", "E", "I", "L", "ICU", "R", "D", "V"]):
     # make sure correct number of names for dataframes
     assert len(aggs) == len(columns)
-    savePath = "/Users/mathewjacob/Desktop/RxCOVea/Vaccine_Portion/Aggregates/" + simType
+    savePath = "Aggregates/" + simType
     for i, df in enumerate(aggs):
         fname = savePath + "/" + columns[i] + ".csv"
         df.to_csv(fname)
